@@ -1,0 +1,133 @@
+/* Google Fonts - Fuente principal del proyecto */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}
+
+/* Tipografía base */
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+body {
+    width: 100%;
+}
+
+/* Clases utilitarias de espaciado reutilizadas en varias secciones */
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+/* ============================================================
+   HEADER Y NAVEGACIÓN
+   Barra superior fija con logo y menú
+   ============================================================ */
+
+.header{
+        
+    padding: 20px 80px;
+    background-color: #E3E6f3;
+    /* El header queda fijo en la parte superior al hacer scroll */
+    z-index: 999;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.navbar li{
+    list-style: none;
+    padding: 0 20px;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* ============================================================
+   HERO
+   Sección principal con imagen de fondo y texto destacado
+   ============================================================ */
+
+.hero{
+    background-image: url('./img/hero4.jpg');
+    height: 95vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 5% center;
+    padding: 0 80px;
+    margin-bottom: 40px;
+}
+
+.hero .hero-content{
+    width: 50%;
+    z-index: 1;
+}
+
+.hero .hero-content h4{
+    color: #088178;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.hero .hero-content h2 {
+    color: #222;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero .hero-content h1 {
+    color: #088178;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero .hero-content p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.hero .hero-content button{
+    background-color: #088178;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+
