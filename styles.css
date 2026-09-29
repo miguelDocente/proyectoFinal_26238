@@ -1,7 +1,7 @@
 /* Google Fonts - Fuente principal del proyecto */
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,6 +39,7 @@ p {
 
 body {
     width: 100%;
+
 }
 
 /* Clases utilitarias de espaciado reutilizadas en varias secciones */
@@ -55,10 +56,13 @@ body {
    Barra superior fija con logo y menú
    ============================================================ */
 
-.header{
-        
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 80px;
     background-color: #E3E6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     /* El header queda fijo en la parte superior al hacer scroll */
     z-index: 999;
     position: sticky;
@@ -66,25 +70,110 @@ body {
     left: 0px;
 }
 
-.navbar li{
+/* lista de navegación horizontal */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li {
     list-style: none;
     padding: 0 20px;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
     color: #1a1a1a;
 }
 
+.navbar a:hover {
+    color: #088178;
+}
+
+/* Botón hamburguesa - 
+oculto en desktop
+visible en mobile
+*/
+
+.mobile {
+    display: none;
+    align-items: center;
+}
+
+/* Botón cerrar menú mobile */
+.close {
+    display: none;
+}
+
+/* Responsive: menú deslizante desde la derecha en pantallas pequeñas */
+
+@media(max-width: 799px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+
+    }
+
+    .navbar li {
+        margin-bottom: 25px;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    /* Clase que se agrega con JS para mostrar el menu */
+
+    .active {
+        right: 0px;
+    }
+
+    .close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+
+}
+
+
+
+
+
 /* ============================================================
    HERO
    Sección principal con imagen de fondo y texto destacado
    ============================================================ */
 
-.hero{
+.hero {
     background-image: url('./img/hero4.jpg');
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     height: 95vh;
     width: 100%;
     background-size: cover;
@@ -93,12 +182,16 @@ body {
     margin-bottom: 40px;
 }
 
-.hero .hero-content{
+.hero .hero-content {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
     z-index: 1;
 }
 
-.hero .hero-content h4{
+.hero .hero-content h4 {
     color: #088178;
     margin-bottom: 10px;
     font-size: 1rem;
@@ -121,7 +214,7 @@ body {
     margin-bottom: 20px;
 }
 
-.hero .hero-content button{
+.hero .hero-content button {
     background-color: #088178;
     color: white;
     padding: 12px 25px;
@@ -130,4 +223,104 @@ body {
     cursor: pointer;
 }
 
+.hero .hero-content button:hover {
+    background-color: #066f66;
+}
 
+/* Responsive Hero*/
+@media(max-width: 1200px) {
+    .hero {
+        padding: 0 60px;
+    }
+
+    .hero .hero-content {
+        width: 55%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        height: 85vh;
+        padding: 0 60px;
+    }
+
+    .hero .hero-content {
+        width: 60%;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero .hero-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        padding: 0 40px;
+        justify-content: center;
+        background-position: top center;
+    }
+
+    .hero .hero-content{
+        width: 80%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .hero-content h4 {
+        font-size: 0.9rem;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero{
+        height: 60vh;
+        padding: 0 20px;
+        background-position: 55% center;
+    }
+
+    .hero .hero-content {
+        width: 100%;
+    }
+
+    .hero .hero-content h4 {
+        font-size: 0.8rem;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .hero .hero-content p {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .hero .hero-content button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+}
